@@ -7,6 +7,7 @@ import classnames from "classnames/bind";
 
 // Assets
 import { MdErrorOutline } from "react-icons/md";
+import { VscError } from "react-icons/vsc";
 
 // Formik
 import { useField } from "formik";
@@ -27,13 +28,16 @@ export default function AuthInputField({
     const isError = meta.error && meta.touched;
 
     return (
-        <div className={cx("input-container")}>
+        <div className={cx("input-container", { error: isError })}>
             <input {...field} {...props} placeholder=" " />
 
             <span className={cx("placeholder")}>{placeholder}</span>
 
             {isError && (
-                <span className={cx("error-message")}>{meta.error}</span>
+                <span className={cx("error-message")}>
+                    <MdErrorOutline />
+                    {meta.error}
+                </span>
             )}
         </div>
     );

@@ -5,6 +5,7 @@
 
   @include position(relative);
   margin-block: 2rem $errorMessageHeight + $errorMessageMargin;
+  transition: all ease 300ms;
 
   input {
     @include size(100%, 4.6rem);
@@ -53,6 +54,21 @@
       false,
       0
     );
-    @include text($errorColor, 1.4rem, 400, $errorMessageHeight);
+    @include flexCenter();
+    @include text($errorColor, 1.3rem, 400, $errorMessageHeight);
+    gap: 0.5rem;
+  }
+
+  &.error {
+    margin-block: 2rem $errorMessageHeight + $errorMessageMargin + 1rem;
+
+    input {
+      @include text($errorColor);
+      border-color: $errorColor;
+    }
+
+    .placeholder {
+      @include text($errorColor !important);
+    }
   }
 }
