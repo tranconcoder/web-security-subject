@@ -1,0 +1,23 @@
+.box-hero {
+  @include position(relative);
+
+  .box-background {
+    @include size(100%, false);
+    object-fit: cover;
+    object-position: center;
+    margin-top: -0.1rem;
+  }
+
+  .box-text {
+    @include position(absolute, false, false, 2rem, 2rem);
+
+    .box-title {
+      @include text($whiteColor, 2.4rem, 700, 4rem);
+    }
+
+    .box-desc {
+      @include text($whiteColor, 1.4rem, 400);
+      opacity: 0.7;
+    }
+  }
+}

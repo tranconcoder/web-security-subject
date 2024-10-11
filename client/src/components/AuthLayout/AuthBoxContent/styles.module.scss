@@ -1,0 +1,41 @@
+.box-content {
+  padding: 1rem;
+
+  .direction-ctn {
+    $directionCtnHeight: 4rem;
+
+    @include size(100%, $directionCtnHeight);
+    @include flex(row, stretch);
+    @include position(relative);
+    border-radius: 50rem;
+    background-color: $primaryBrightnessColor;
+    border: 0.3rem solid $primaryBrightnessColor;
+
+    .direction-login,
+    .direction-register {
+      @include text($whiteColor, 1.5rem, 400);
+      @include flexCenter();
+      flex: 1;
+      text-align: center;
+      text-decoration: none;
+      z-index: 1;
+
+      &.active {
+        @include text($textColor);
+        font-weight: 500;
+      }
+    }
+
+    .slider {
+      @include position(absolute, 0, 0, false, 0);
+      @include size(50%, 100%);
+      background: $whiteColor;
+      border-radius: 50rem;
+    }
+
+    .direction-register.active + .slider {
+      left: unset;
+      right: 0;
+    }
+  }
+}

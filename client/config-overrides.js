@@ -13,7 +13,10 @@ module.exports = function override(config, env) {
                             loader: "sass-resources-loader",
                             options: {
                                 // Provide path to the file with resources
-                                resources: "./src/assets/scss/mixins.scss",
+                                resources: [
+                                    "./src/assets/scss/mixins.scss",
+                                    "./src/assets/scss/variables.scss",
+                                ],
                             },
                         },
                     ],

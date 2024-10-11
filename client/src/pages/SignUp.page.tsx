@@ -1,7 +1,6 @@
+import AuthLayout from "../layouts/AuthLayout";
+
 export default function SignUpPage() {
     return (
-        <div>
-            <h1>Sign up page</h1>
-        </div>
-    );
-}
+            <AuthLayout>123</AuthLayout>
+           )}
