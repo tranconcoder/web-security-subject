@@ -6,6 +6,7 @@ import classnames from "classnames/bind";
 import AuthInputField from "../AuthInputField";
 import AuthFormikMiddleware from "../AuthFormikMiddleware";
 import signInSchema from "../../schema/yup/signInForm.schema";
+import ButtonSimple from "../common/ButtonSimple";
 
 const cx = classnames.bind(styles);
 
@@ -21,20 +22,21 @@ export default function SignIn() {
                 onSubmit={handleSubmit}
                 validationSchema={signInSchema}
             >
-            <>
+                <>
+                    <AuthInputField
+                        name="username"
+                        type="text"
+                        placeholder="Tên đăng nhập..."
+                    />
 
-                <AuthInputField
-                    name="username"
-                    type="text"
-                    placeholder="Tên đăng nhập..."
-                />
+                    <AuthInputField
+                        name="password"
+                        type="password"
+                        placeholder="Mật khẩu..."
+                    />
 
-                <AuthInputField
-                    name="password"
-                    type="password"
-                    placeholder="Mật khẩu..."
-                />
-            </>
+                    <ButtonSimple type="button">Đăng nhập</ButtonSimple>
+                </>
             </AuthFormikMiddleware>
         </div>
     );
