@@ -1,31 +1,36 @@
+// Types
+import { PropsWithChildren } from "react";
+
+// Styles
 import styles from "./styles.module.scss";
 import classnames from "classnames/bind";
-import { PropsWithChildren, useState } from "react";
-import { Link, useMatch } from "react-router-dom";
+
+// Components
+import { NavLink } from "react-router-dom";
 
 const cx = classnames.bind(styles);
 
 export default function AuthBoxContent({ children }: PropsWithChildren) {
-    const isLogin = useMatch("/auth/sign-in");
-
     return (
         <div className={cx("box-content")}>
             <div className={cx("direction-ctn")}>
-                <Link
-                    className={cx("direction-login", { active: isLogin })}
+                <NavLink
                     to="/auth/sign-in"
-                    replace
+                    className={({ isActive: active }) =>
+                        cx("direction-login", { active })
+                    }
                 >
                     Đăng nhập
-                </Link>
+                </NavLink>
 
-                <Link
-                    className={cx("direction-register", { active: !isLogin })}
+                <NavLink
                     to="/auth/sign-up"
-                    replace
+                    className={({ isActive: active }) =>
+                        cx("direction-register", { active })
+                    }
                 >
                     Đăng ký
-                </Link>
+                </NavLink>
 
                 <div className={cx("slider")}></div>
             </div>

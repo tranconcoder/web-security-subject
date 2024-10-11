@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
-import {SIGN_IN_PAGE_ID} from "../constants/routeId.constant";
+import { SIGN_IN_PAGE_ID } from "../constants/routeId.constant";
+import AuthLayout from "../layouts/AuthLayout";
 
 // Pages
 import HomePage from "../pages/Home.page";
@@ -17,8 +18,9 @@ const router = createBrowserRouter([
     },
     {
         path: "/auth",
+        element: <AuthLayout />,
         children: [
-        { id: SIGN_IN_PAGE_ID,path: "sign-in", element: <SignInPage /> },
+            { id: SIGN_IN_PAGE_ID, path: "sign-in", element: <SignInPage /> },
             { path: "sign-up", element: <SignUpPage /> },
         ],
     },

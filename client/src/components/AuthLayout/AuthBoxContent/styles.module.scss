@@ -31,11 +31,11 @@
       @include size(50%, 100%);
       background: $whiteColor;
       border-radius: 50rem;
+      transition: all ease 300ms;
     }
 
     .direction-register.active + .slider {
-      left: unset;
-      right: 0;
+      transform: translateX(100%);
     }
   }
 }
