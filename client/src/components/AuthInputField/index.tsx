@@ -5,6 +5,9 @@ import type { InputHTMLAttributes } from "react";
 import styles from "./styles.module.scss";
 import classnames from "classnames/bind";
 
+// Assets
+import { MdErrorOutline } from "react-icons/md";
+
 // Formik
 import { useField } from "formik";
 
