@@ -1,0 +1,58 @@
+.input-container {
+  $paddingSize: 1.2rem;
+  $errorMessageHeight: 2rem;
+  $errorMessageMargin: 0.5rem;
+
+  @include position(relative);
+  margin-block: 2rem $errorMessageHeight + $errorMessageMargin;
+
+  input {
+    @include size(100%, 4.6rem);
+    border: 0.2rem solid #ccc;
+    border-radius: 1rem;
+    padding-inline: $paddingSize;
+    outline: none;
+    transition: all ease 300ms;
+
+    &:focus {
+      border-color: $primaryColor;
+
+      + .placeholder {
+        @include text($primaryColor);
+        top: 0;
+        left: 2rem;
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      + .placeholder {
+        top: 0;
+        left: 2rem;
+      }
+    }
+  }
+
+  .placeholder {
+    $padding: 0.5rem;
+
+    @include position(absolute, 50%, false, false, $paddingSize - $padding);
+    @include text(#aaa, 1.5rem, 500);
+    transition: all ease 300ms;
+    transform: translateY(-50%);
+    pointer-events: none;
+    background-color: $whiteColor;
+    padding: $padding;
+    border-radius: 1rem;
+  }
+
+  .error-message {
+    @include position(
+      absolute,
+      calc(100% + #{$errorMessageMargin}),
+      false,
+      false,
+      0
+    );
+    @include text($errorColor, 1.4rem, 400, $errorMessageHeight);
+  }
+}
