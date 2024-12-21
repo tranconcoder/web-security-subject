@@ -1,0 +1,109 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+table thead tr {
+  height: 3.6rem;
+}
+table thead tr > th:first-child {
+  width: 10rem;
+}
+table tbody {
+  box-shadow: 0 0 0.6rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+  margin-top: 1rem;
+}
+table tbody tr:not(:last-child) {
+  border-bottom: 1px solid #ccc;
+}
+table tbody tr td {
+  height: 4rem;
+  text-align: center;
+}
+table tbody tr td.id {
+  color: #006bb3;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-left: 1rem;
+}
+table tbody tr td.products,
+table tbody tr td.deal {
+  padding-block: 1rem;
+}
+table tbody tr td.products ol,
+table tbody tr td.products ul,
+table tbody tr td.deal ol,
+table tbody tr td.deal ul {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  list-style-type: none;
+}
+table tbody tr td.products ol li,
+table tbody tr td.products ul li,
+table tbody tr td.deal ol li,
+table tbody tr td.deal ul li {
+  width: 100%;
+  height: 1rem;
+}
+table tbody tr td.products ul li {
+  color: #006bb3;
+  text-align: left;
+}
+table tbody tr td.products ul li:hover {
+  text-decoration: underline;
+}
+table tbody tr td.products ul li a {
+  line-break: anywhere;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-decoration: none;
+  color: currentColor;
+}
+table tbody tr td.price {
+  color: #006bb3;
+  font-size: 1rem;
+  font-weight: 600;
+}
+table tbody tr td.actions div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+table tbody tr td.actions div button {
+  --color: #006bb3;
+  width: 2.3rem;
+  height: 2.3rem;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 0.3rem;
+  outline: none;
+  border: 2px solid var(--color);
+  background-color: var(--color);
+  transition: all ease 300ms;
+}
+table tbody tr td.actions div button:hover {
+  cursor: pointer;
+  color: var(--color);
+  background-color: #ffffff;
+}
+table tbody tr td.actions span.order-id {
+  color: #333;
+  font-size: 0.5rem;
+}
+
+/*# sourceMappingURL=home-page.css.map */

@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="/public/css/home-page.css" />
+
+<table>
+    <thead>
+        <tr>
+            <th>STT</th>
+            <th>Session</th>
+            <th>Thời gian lấy được</th>
+            <th>Quản trị viên</th>
+        </tr>
+    </thead>
+
+    {{#each sessions}}
+        <tr>
+            <td>{{@key}}</td>
+            <td>{{session}}</td>
+            <td>{{create_at}}</td>
+            <td>{{is_admin}}</td>
+        </tr>
+    {{/each}}
+</table>
